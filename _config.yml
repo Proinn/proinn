@@ -1,7 +1,7 @@
 # Site
 title:              Michiel Braat
-bio:                Data Scientist | Machine Learining | Deep Learning
-description:        Data Scientist | Machine Learining | Deep Learning
+bio:                'Data Scientist | Machine Learining | Deep Learning'
+description:        'Data Scientist | Machine Learining | Deep Learning'
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site

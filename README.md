@@ -1,3 +1,12 @@
+This webside is made using Jekyll and the Massively design plus some elements of the agency bootstrap design. 
+
+For the Agency bootstrap design see: [https://github.com/startbootstrap/startbootstrap-agency](https://github.com/startbootstrap/startbootstrap-agency)
+For the Massively jekyll design see: [https://github.com/jekyllup/jekyll-theme-massively](https://github.com/jekyllup/jekyll-theme-massively)
+
+
+### Original README from MASSIVELY
+
+## Credits
 # Massively
 > This is Massively, a text-heavy, article-oriented design built around a huge background
 image.
@@ -35,7 +44,6 @@ sitemap:
   changefreq: weekly
 ```
 
-## Credits
 ### Original README from HTML5 UP
 ```
 Massively by HTML5 UP

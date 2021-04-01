@@ -1,28 +1,20 @@
 ---
 layout: post
-title:  "Welcome to Massively: The Jekyll Theme!"
-date:   2017-10-31
-excerpt: "Huge thanks to HTML5 UP for making this awesome template! Let's see what it can do"
+title:  "Hello World!!!"
+date:   2021-04-02
+excerpt: "Yay! This is my first project post! So lets talk projects."
 image: "/images/pic02.jpg"
 ---
 
-## How to Use This Theme
-Just go ahead and read up on [how to install Jekyll](https://jekyllrb.com/). It's not too hard I promise!
+## Welcome
+This is my first project post of my site! I have not much to show or tell about at the moment. At the moment I am busy changing a very old site of mine that was on the internet to a more updated version; this one. The aim is to have a more representable site about me and what I am doint at the moment. This site was made using Jekyll and the Massively template. I tweaked it here and there, but I have to say, the process is quity pleasant. Before this, the websites that I have made were all static HTML/CSS/JS sites with little flexibility. Now with Jekyll I can easily make new posts and rebuild my changes easily into an updated static site. 
 
-Download this repository [here](https://github.com/iwiedenm/jekyll-theme-massively) and save it to any folder you want.
+In the past days I will update the pages and add some old projects and things I have done of which I think they are still interesting and relevant. After this I plan to also document some projects I am working in at the moment.
 
-Open a terminal window or a command line and ```cd``` to that location.
 
-Then enter: ```bundle exec jekyll serve```. You can now access your new Jekyll site from [http://127.0.0.1:4000/](http://127.0.0.1:4000/). Have fun exploring your new site!
+## Upcomming Projects
+### Enconding Nature
+Following Daniel Shiffman and the coding train i really like doing small visual coding experiments where I make cool visuals using nature inspired algorithms like the Reaction Diffusion algorithm. I am at the moment working on implementing it in THREE.js and WebGL such that simulations of this algorithm can be shown in the browser at a nice speed!
 
-## Features
-### Auto-Generating Sitemap
-The sitemap is auto generated! Just simply change the front matter of each site. It looks like so...
-```
-sitemap:
-    priority: 0.7
-    lastmod: 2017-11-02
-    changefreq: weekly
-```
-### Formspring integration
-The contact form below each page on the footer actually collects information! Just change your email address in the ```_config.yml``` file!
+### GAN experimenting
+Following the Kaggle Project I am something of a painter myself and inerest in GAN literature like ProGAN/StyleGAN/MSG-GAN I am trying to train one myself and test out some cool interpolations visuals. Generative models are very tricky to train, but very fun to play with!

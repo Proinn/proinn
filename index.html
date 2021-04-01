@@ -34,12 +34,6 @@ sitemap:
 							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
-				<!-- Header -->
-					<header id="header">
-						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
-					</header>
-
-				<!-- Nav -->
 					<nav id="nav">
 
             {% include nav.html %}
@@ -49,34 +43,37 @@ sitemap:
 				<!-- Main -->
 					<div id="main">
 						<!-- Featured Post -->
-							<article class="post featured">
-								<span class="image left"><img src="{{ "/images/photo.jpg" | absolute_url }}" alt="" /></span>
+							<article >
 								<header>
 									<h2>Michiel Braat</h2>
 									<p>Data Scientist | Machine Learining | Deep Learning</p>
 								</header>
-							
-				                <p>	I am a Data Scientist with a diverse
-									background. I am an outof-
-									the-box thinker ready to tackle
-									projects with a fresh approach.
-									In my work as a Data Scientist I
-									can express both my broad interest
-									as well as my strong analytical
-									skills. I like to work in small
-									teams with smart people where
-									we can get to results fast, and in
-									the mean time learn from each
-									other.</p>
-				               
+
+
+				                <p>	Hello there! Thank you for taking a look at my personal site. I am Michiel, a Data Scientis, working mostly with deep learning and machine learning techinques. But besides that I like a lot of different things. On this site you kan find out what I have been up to and check out several different kind of projects of me, including deep learning, mathematical modelling, painting and other fun stuff. </p>
+
+				               <p>Please take a look around!</p>
 
 							</article>
 
+					<section class="posts">
+						{% for post in site.posts %}
+						{% assign mod3 = forloop.index | modulo: 3 %}
+							<article>
+								<header>
+									<span class="date">{{ post.date | date_to_string }}</span>
+									<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+								</header>
+								<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+								<p>{{ post.excerpt }}</p>
+							</article>
+						{% endfor %}
 
+					</section>
 						<!-- Footer -->
 							<footer>
                 <ul class="actions">
-                  <li><a href="{{ "/Projects/" | absolute_url }}" class="button">My Projects</a></li>
+                  <li><a href="{{ "/Projects/" | absolute_url }}" class="button">More Projects</a></li>
                 </ul>
 							</footer>
 

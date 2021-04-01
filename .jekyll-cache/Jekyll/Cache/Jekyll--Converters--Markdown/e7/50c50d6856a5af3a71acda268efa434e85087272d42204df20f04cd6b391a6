@@ -1,0 +1,10 @@
+I"ß<h2 id="welcome">Welcome</h2>
+<p>This is my first project post of my site! i have not much to show or tel about at the moment. Maybe I can say something about what I am doing at the moment in my free time!</p>
+
+<h2 id="upcomming-projects">Upcomming Projects</h2>
+<h3 id="enconding-nature">Enconding Nature</h3>
+<p>Following Daniel Shiffman and the coding train i really like doing small visual coding experiments where I make cool visuals using nature inspired algorithms like the Reaction Diffusion algorithm. I am at the moment working on implementing it in THREE.js and WebGL such that simulations of this algorithm can be shown in the browser at a nice speed!</p>
+
+<h3 id="gan-experimenting">GAN experimenting</h3>
+<p>Following the Kaggle Project I am something of a painter myself and inerest in GAN literature like ProGAN/StyleGAN/MSG-GAN I am trying to train one myself and test out some vool interpolations. Generative models are very tricky to train, but very fun to play with!</p>
+:ET

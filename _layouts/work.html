@@ -1,0 +1,86 @@
+
+<html>
+    <head>
+    {% include head.html %}
+    <link rel="stylesheet" href="{{- 'assets/css/timeline.css' | relative_url -}}" />
+    </head>
+    <body class="is-loading">
+
+
+        <!-- Wrapper -->
+            <div id="wrapper" class="fade-in">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+                </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+
+            {% include nav.html %}
+
+                    </nav>
+
+                <!-- Main -->
+                <div id="main">
+                    <div class="container">
+                        <header>
+                            <h2 class="section-heading text-uppercase">Work</h2>
+                        </header>
+                        <ul class="timeline">
+                            <li>
+                                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ "/images/pttrns.png" | absolute_url }}" alt="" /></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>2019-Now</h4>
+                                        <h4 class="subheading">Data Scientist - PTTRNS.AI</h4>
+                                    </div>
+                                    <div class="timeline-body"><p class="text-muted">At PTTRNS.AI I work on projects using deep learning. Projects include visual similarity and feature extraction of fashion items, visual reidentification of luggage and text entity matching.</p></div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ "/images/uvt.jpg" | absolute_url }}" alt="" /></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>2018-2019</h4>
+                                        <h4 class="subheading">Research Trainee - Tilburg University</h4>
+                                    </div>
+                                    <div class="timeline-body"><p class="text-muted">As a Trainee I worked on quantitative analysis of large amounts of citation in the field of psychology in the 20th century. The result of the research van be found in a scholarly <a href="url">paper</a> published in the APA journal History of Psychology. </p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ "/images/bioartlab.jpg" | absolute_url }}" alt="" /></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>2016</h4>
+                                        <h4 class="subheading">Design Intern - BioArtLab</h4>
+                                    </div>
+                                    <div class="timeline-body"><p class="text-muted">At BioArtlab I worked in a multidisciplenary group of artists, biologists, scientists. Working both in a bio lab and development of art and products. </p></div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ "/images/studentsplus.jpg" | absolute_url }}" alt="" /></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>2013 - 2014</h4>
+                                        <h4 class="subheading">Tutor - Student Plus</h4>
+                                    </div>
+                                    <div class="timeline-body"><p class="text-muted">As a tutor at Student Plus, I tutored high school students in mathematics, physics, chemistry and biology. </p></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+        {% include foot.html %}
+
+            </div>
+
+            <!-- Scripts -->
+            {% include scripts-main.html %}
+            {% include tracking.html %}
+
+    </body>
+</html>

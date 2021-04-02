@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Michiel Braat About
+title: Michiel Braat - About
 description: Here you can find more information about me. 
 sitemap:
     priority: 0.7

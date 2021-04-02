@@ -1,6 +1,6 @@
 ---
 layout: work
-title: Michiel Braat Work
+title: Michiel Braat - Work
 description: Working history of me.
 sitemap:
     priority: 0.7

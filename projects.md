@@ -1,6 +1,6 @@
 ---
 layout: projects
-title: Michiel Braat Projects
+title: Michiel Braat - Projects
 description: Here you can find out more about projects done by me.
 sitemap:
     priority: 1.0

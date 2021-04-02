@@ -3,7 +3,7 @@ layout: post
 title:  "Hello World!!!"
 date:   2021-04-02
 excerpt: "Yay! This is my first project post! So lets talk projects."
-image: "/images/pic02.jpg"
+image: "/images/hello_world.png"
 ---
 
 ## Welcome

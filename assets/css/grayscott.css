@@ -1,0 +1,7 @@
+#gscontainer{
+    width: 100%;
+    height: 200px;
+    border: 1px solid;
+    border-color: #212931;
+    position: relative;
+}

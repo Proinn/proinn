@@ -11,10 +11,11 @@ disqus_shortname:   default
 
 # Social
 analytics-id:       "default"
-twitter:            default
+twitter:            
 facebook:           default
-instagram:          default
-github:             default
+linkedin:           michiel-braat
+github:             Proinn
+kaggle:             
 
 # personal
 location:           Eindhoven

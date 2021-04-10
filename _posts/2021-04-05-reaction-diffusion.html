@@ -91,77 +91,100 @@ image: "/images/gray_scot_banner.jpg"
 	<h2>Reaction Diffusion</h2>
 	<p>
 		One of the most beautiful fields of science lies between biology and computer science. 
-        With just a couple of simple rules inspired by nature, it is sometimes possible to create 
+        With just a couple of simple rules inspired by nature, it is possible to create 
         the most complex systems. Examples of these are flocking behaviors, Lindenmayer-systems 
         and slime-mold networks. However, in this blog post I want to focus on another system: 
-        Reaction-diffusion systems. Reaction diffusion systems are systems that are known to create 
+        Reaction diffusion systems. Reaction diffusion systems are systems that are known to create 
         all kinds of patterns that can be found in nature, like stripes on a zebra, or spots on a 
         giraffe. And actually these patterns are also sometimes known as Turing patterns, named after 
         Alan Turing, who is not only the father of the theory of computation, but also wrote one of 
-        the foundational papers about how these patterns can arise seemingly by itself in nature. 
+        the foundational <a href="https://www.jstor.org/stable/92463?seq=1">papers</a> about how these patterns 
+		can arise seemingly by itself in nature. 
 	</p>
 
 	<p><span class="image left"><img src="{{ "/images/gs_2.jpg" | absolute_url }}" alt="" /></span>
-		A reaction diffusion system is a system which describes the concentrations of specific particles or chemicals in space. 
-        In these systems with two mayor dynamics that are happening; reaction and diffusion. 
+		A reaction diffusion system is a system which describes the concentrations of specific particles or 
+		chemicals in space. In these systems there are two mayor dynamics that are happening: reaction and diffusion. 
         There is a reaction of some kind, between the different kind of chemicals. And besides that there is 
         diffusion happening of these chemicals though the space. If we for example have a 2 dimensional space with 
         two kinds of chemicals A and B, the reaction diffusion system can generate all kinds of patterns by the 
         interaction between the reaction that is happening between chemical A and B and the diffusion of these 
         two chemicals. Because of this we can get waves of concentrations gradients which flow through the two 
-        dimensional space. </p>
+        dimensional space. These waves we then can visualise, and get patterns like you see on the 
+		left image.  </p>
 	
-	<h3>Gray Scott Algorithm</h3>	
-	<div class="box">
-		<img src="https://latex.codecogs.com/svg.latex?\Large&space;A_{t+1} = A_t + dt * (D_A \Delta A_t - AB^2 + f(1 - A))" title="Gray-Scott algorithm" />
-		<img src="https://latex.codecogs.com/svg.latex?\Large&space;B_{t+1} = B_t + dt * (D_B \Delta B_t + AB^2 - (k+f)B)" title="Gray-Scott algorithm" />
-	</div>
+	<h3>Gray Scott Algorithm</h3>
 
 		<p>
 			One of these reaction diffusion algorithms is the Gray-Scott algorithm. 
 			This algorithm is a reaction between chemical $A$ and chemical $B$, where two particles of chemical $B$ plus a particle of chemical $A$ change into 2 particles of chemical $B$  
-			The formulas for the change of concentration of both chemicals are described above. We can see for the new concentrations of $A$ and $B$ we take the previous concentrations 
+			The formulas for the change of concentration of both chemicals are described below. We can see for the new concentrations of $A$ and $B$ we take the previous concentrations 
 			plus the change in concentration times the time step $dt$.
 			The change in the chemicals for both $A$ and $B$ is described by 3 factors. Let's go through them one by one.
  		</p>
-		
+
+		 <div class="box">
+			<img src="https://latex.codecogs.com/svg.latex?\Large&space;A_{t+1} = A_t + dt * (D_A \Delta A_t - AB^2 + f(1 - A))" title="Gray-Scott algorithm" />
+			<img src="https://latex.codecogs.com/svg.latex?\Large&space;B_{t+1} = B_t + dt * (D_B \Delta B_t + AB^2 - (k+f)B)" title="Gray-Scott algorithm" />
+		</div>
+
 			<h4>Diffusion</h4>	
 		<p>
-			The first is the diffusion factor. The diffusion factor $D_A \Delta A$ is composed of a diffusion rate $D_A$,
-            which is a specific constant for the chemical. But more interestingly we multiply this by $\Delta A_t$, which is the Laplacian of the concentration of $A$ at time $t$ 
-            (the second positional derivative of the amount of chemical $A$). This Laplacian is key to the diffusion part of the algorithm. 
+			The first is the diffusion factor. The diffusion factor $D_A \Delta A$ containst first of all a diffusion rate $D_A$,
+            which is a specific constant for the chemical. But more interestingly we multiply this by $\Delta A_t$, which is the Laplacian 
+			of the concentration of $A$ at time $t$ (the second positional derivative of the amount of chemical $A$). 
+			This Laplacian is key to the diffusion part of the algorithm. 
             The Laplacian encodes the difference in concentration between the point we want to calculate, and the surrounding points. 
             This is good because the diffusion should change the amount of $A$ in such a way that it flows from high concentrations to lower concentrations. 
             This part of the equation is actually similar to <a href="https://en.wikipedia.org/wiki/Heat_equation">the heat equation</a>. 
-            In practice, when coding the Laplacian, we do not solve the Laplacian analytically though, we actually use a convolutional kernel which encodes this Laplacian operator. 		</p>
+            In practice, when coding the Laplacian, we do not solve the Laplacian analytically though, 
+			we actually use a convolutional kernel which encodes this Laplacian operator at every timestep.
+		</p>
 		<h4>Reaction</h4>	
 		<p>
-			Besides the diffusion we have the reaction. The reaction between $A$ and $B$ can be found in the formulas as the term $A*B^2$. We also see that this term is removed from $A$, but added to $B$. 
-			Is encodes the particles of $A$ that change into $B$. And the rate of this reaction is proportional to A, because when there are more particles of A, the reaction has more change to happen and the speed of the reaction increases. 
-			This reasoning can also be applied to the concentration of $B$, but because $B$ is used 2 times in the reaction. The reaction speed is actually related to $B^2$.
+			Besides the diffusion we have the reaction. The reaction between $A$ and $B$ can be found in the formulas as 
+			the term $A*B^2$. We also see that this term is removed from $A$, but added to $B$. 
+			Is encodes the particles of $A$ that change into $B$. The rate of this reaction is proportional to A, 
+			because when there are more particles of A, the reaction has more change to happen and the speed of the reaction increases. 
+			This reasoning can also be applied to the concentration of $B$, but $B$ is used 2 times in the reaction. 
+			Therefore reaction speed is actually related to $B^2$, which then results in the reaction term.
 		</p>
 		<h4>Feed and kill rates</h4>
 
 		<p><span class="image right"><img src="{{ "/images/gs_1.jpg" | absolute_url }}" alt="" /></span>
-			And finally we have the last terms in both the reactions. These are the feed and kill rate. One can imagine that when we have particles of $A$ reacting to particles of $B$,
-        	we finally end up with only $B$ everywhere. To sustain the reaction, there is a feed rate and a kill rate. The feed rate replenishes $A$, and the kill rate reduces $B$. We can let the pattern generation start
-        	by starting with a 2 dimensional canvas which is full of chemical $A$ and has no $B$, we then seed it at some place with chemical $B$, and the pattern starch growing. 
-        	In the simulation beneath you can seed the canvas with a bit of $B$ by drawing on top of it. 
+			And finally we have the last terms in both the reactions. These are the feed and kill rate. 
+			One can imagine that when we have particles of $A$ reacting to particles of $B$,
+        	we finally end up with only $B$ everywhere. To sustain the reaction, there is a feed rate and a kill rate. 
+			The feed rate replenishes $A$, and the kill rate reduces $B$. We can let the pattern generation start
+        	by starting with a 2 dimensional canvas which is full of chemical $A$ and has no $B$, 
+			we then seed it at some place with chemical $B$, and the pattern starts growing. 
 		</p>
 
 		<p>
-			What kind of patterns are the result of the algorithm are based on that numbers you choose for the constants in the formulas. By changing the feed and kill rate the patterns change from spirals, to worms, to blobs. 
-			You can play with this a bit in the simulation at the end of the page, where you can change the feed rate with the slider underneath. Besides that there is a kill rate gradient in the simulation going from left to right. 
+			What kind of patterns are the result of the algorithm are based on that numbers you choose for the constants 
+			in the formulas ($D_A$, $D_B$, $f$ and $k$). By changing the feed and kill rate the patterns change from spirals, 
+			to worms, to blobs. 
+			You can see how the feedrate and killrate have effect on the pattern in the image on the right, 
+			which changes in feedrate on the y-axis, and in kullrate on the x-axis.
+			You can play with a interactive simulation of this a bit in the image at the end of the page, 
+			where you can change the feed rate with the slider underneath. 
+			Besides that there is a kill rate gradient in the simulation going from left to right. 
 		</p>
 
 
 
 	<h3>Three.js and WebGL</h3>
 	<p>
-		One can simulate this algorithm easily in several languages and packages. For example Daniel Shiffman has a very nice <a href="https://www.youtube.com/watch?v=BV9ny785UNc">tutorial</a> on how to do this on YouTube in p5.js. 
-        However, when you want to run this simulation at faster speeds, you would want to accelerate it on a GPU, which is much faster in these parallel computations like the Laplacian kernel. 
-        Because of this I implemented the simulations you can see above and below using the THREE.js library and some GLSL script, such that it can run using WebGL. This is the first time I do a project with JavaScript, THREE.js and WebGL. 
-        Is has been great fun to learn how to do CPU acceleration for in the browser. The resulting simulations are quite fun and fast enough to keep playing with them. If you want to check out how I did this or play more with the algorithm, 
+		One can simulate this algorithm easily in several languages and packages. 
+		For example Daniel Shiffman has a very nice <a href="https://www.youtube.com/watch?v=BV9ny785UNc">tutorial</a> 
+		on how to do this on YouTube in p5.js. 
+        However, when you want to run this simulation at faster speeds, you would want to accelerate it on a GPU, 
+		which is much faster in these parallel computations like the Laplacian kernel. 
+        Because of this I implemented the simulations you can see above and below using the THREE.js 
+		library and some GLSL script, such that it can run using WebGL. This is the first time I do a project with 
+		JavaScript, THREE.js and WebGL. Is has been great fun to learn how to do CPU acceleration for in the browser. 
+		The resulting simulations are quite fun and fast enough to keep playing with them. 
+		If you want to check out how I did this or play more with the algorithm, 
 		you can check out the repo on <a href=https://github.com/Proinn/reaction_diffusion_three_js>GitHub</a>.
 	</p>
 

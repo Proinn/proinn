@@ -22,8 +22,8 @@ class GrayScott{
 			magFilter: THREE.LinearFilter,
 			format: THREE.RGBAFormat,
 			type: THREE.FloatType,
-			wrapS: THREE.RepeatWrapping,
-			wrapT: THREE.RepeatWrapping,
+			wrapS: THREE.ClampToEdgeWrapping,
+			wrapT: THREE.ClampToEdgeWrapping,
         };
         this.prev_target = new THREE.WebGLRenderTarget(this.width, this.height, textureOptions);
         this.next_target = new THREE.WebGLRenderTarget(this.width, this.height, textureOptions);
